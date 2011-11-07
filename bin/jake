@@ -1,6 +1,3 @@
-#!/usr/bin/env narwhal
+var JAKE = require("../lib/jake");
 
-var JAKE = require("jake");
-var SYSTEM = require("system");
-
-JAKE.application().run({ args : SYSTEM.args });
+JAKE.application().run({ args : process.argv });
