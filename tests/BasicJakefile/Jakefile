@@ -1,0 +1,16 @@
+var jake = require("../../lib/jake");
+var util = require('util');
+
+jake.task("build", ["buildDelayed"], function(done){
+	util.puts("build: Running build");
+	done();
+});
+
+jake.task("buildDelayed", function(done){
+	var ms = 500;
+	util.puts("buildDelayed: Delaying for " + ms + "ms");
+	setTimeout(function(){
+		util.puts("Running buildDelayed");
+		done();
+	}, ms);
+});
